@@ -66,7 +66,7 @@ void menu() {
 int main() {
   int i = 0, opt;
   int sum = 0, key = 1;
-  char b[7] = "REGULAR", c[6] = "MEDIUM", d[5] = "LARGE", e[100];
+  char b[8] = "REGULAR", c[7] = "MEDIUM", d[6] = "LARGE", e[100];
   char x[50], a[100], name[50];
   int flag = 0, R, M, L;
   struct order ord;
@@ -106,8 +106,10 @@ int main() {
       switch (ord.item) {
       case 1:
         R = strcmp(a, b);
+        
         if (R == 0) {
           sum = sum + 235 * ord.quant;
+          printf("%s",a);
         }
 
         M = strcmp(a, c);
@@ -118,7 +120,9 @@ int main() {
         L = strcmp(a, d);
         if (L == 0) {
           sum = sum + 305 * ord.quant;
+          
         }
+        // printf("\n%s  %d  %d  %s\n",a,sum,L,d);
         break;
 
       case 2:
@@ -363,8 +367,8 @@ int main() {
         printf("\nThe Item You Entered is Not Available in the Menu\n");
         break;
       }
-
       printf("\nDo you want to order any other item?\n");
+      // printf("%d\n",sum);
       printf("If yes click: 1 or else click:0\n");
       scanf("%d", &key);
     }
